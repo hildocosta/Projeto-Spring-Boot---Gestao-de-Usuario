@@ -88,6 +88,13 @@ public class WeaponServiceImpl implements WeaponService{
     }
 
     @Override
+    public Optional<WeaponResponse> getByPatrimonio(String patrimonio) {
+        LOGGER.info("Buscando arma pelo patrimônio");
+        notNull(patrimonio, "Patrimônio Inválido");
+        return weaponRepository.findByPatrimonio(patrimonio).map(this.responseWeaponMapper::map);
+    }
+
+    @Override
     public boolean delete(Long id) {
         LOGGER.info("Removendo  arma");
         notNull(id, "ID Invalido");
