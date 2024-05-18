@@ -37,21 +37,30 @@ br.com.historico.historico
 ├── model
 │   ├── request
 │   │   └── UserRequest.java
+│   │   └── WeaponRequest.java          
 │   └── response
 │       └── UserResponse.java
+│       └── WeaponResponse.java         
 ├── persistence
 │   ├── entity
 │   │   └── User.java
+│   │   └── Weapon.java                
 │   └── repository
 │       └── UserRepository.java
+│       └── WeaponRepository.java       
 ├── service
 │   ├── Mapper.java
 │   └── UserRequestMapper.java
 │   └── UserResponseMapper.java
-│  └── UserServiceImpl.java
+│   └── WeaponRequestMapper.java        
+│   └── WeaponResponseMapper.java      
+│   └── UserServiceImpl.java
+│   └── WeaponServiceImpl.java          
 │   └── UserService.java
+│   └── WeaponService.java              
 └── ws.historico
     └── UserController.java
+    └── WeaponController.java           
 └── HistoricoApplication.java
 
 ```
