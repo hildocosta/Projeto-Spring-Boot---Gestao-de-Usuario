@@ -12,7 +12,7 @@ public class Weapon {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private String id;
+    private Long id;
 
     @Column(name = "situacao", nullable = false)
     private String situacao;
@@ -58,13 +58,11 @@ public class Weapon {
         return func.apply(this);
     }
 
-
-
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
