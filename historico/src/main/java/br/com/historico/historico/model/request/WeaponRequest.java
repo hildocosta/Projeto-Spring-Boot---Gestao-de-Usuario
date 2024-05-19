@@ -43,7 +43,6 @@ public class WeaponRequest {
     @NotBlank
     private String acabamento;
 
-
     public @NotBlank String getSituacao() {
         return situacao;
     }
@@ -148,4 +147,3 @@ public class WeaponRequest {
         this.acabamento = acabamento;
     }
 }
-

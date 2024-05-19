@@ -1,7 +1,6 @@
 package br.com.historico.historico.ws.historico;
 
 import br.com.historico.historico.model.request.WeaponRequest;
-
 import br.com.historico.historico.model.response.WeaponResponse;
 import br.com.historico.historico.service.WeaponService;
 import org.slf4j.Logger;
@@ -18,7 +17,8 @@ import java.util.Optional;
 @RequestMapping("/historico")
 public class WeaponController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(WeaponController.class);
+
+    private  static final Logger LOGGER = LoggerFactory.getLogger(WeaponService.class);
 
     @Autowired
     private WeaponService weaponService;
@@ -34,15 +34,15 @@ public class WeaponController {
         LOGGER.info("Buscando as armas");
         Page<WeaponResponse> weaponResponses = weaponService.getAll(pageable);
         return ResponseEntity.ok(weaponResponses);
-
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<WeaponResponse> updtade(@PathVariable("id") Long id, @RequestBody WeaponRequest weaponRequest){
+    public ResponseEntity<WeaponResponse> update(@PathVariable("id") Long id, @RequestBody WeaponRequest weaponRequest){
         LOGGER.info("Iniciando a atualizacao");
         Optional<WeaponResponse> update = weaponService.update(id, weaponRequest);
         if(!update.isPresent()){
-            return  ResponseEntity.notFound().build();
+            return ResponseEntity.notFound().build();
+
         }
         return ResponseEntity.ok(update.get());
     }
@@ -51,17 +51,6 @@ public class WeaponController {
     public ResponseEntity<WeaponResponse> get(@PathVariable("id") Long id){
         LOGGER.info("Iniciando a busca pela arma");
         Optional<WeaponResponse> weaponResponse = weaponService.get(id);
-        if(!weaponResponse.isPresent()){
-            return  ResponseEntity.notFound().build();
-        }
-        return ResponseEntity.ok(weaponResponse.get());
-    }
-
-
-    @GetMapping("/patrimonio/{patrimonio}")
-    public ResponseEntity<WeaponResponse> getByPatrimonio(@PathVariable("patrimonio") String patrimonio){
-        LOGGER.info("Iniciando a busca pela arma pelo patrimonio");
-        Optional<WeaponResponse> weaponResponse = weaponService.getByPatrimonio(patrimonio);
         if(!weaponResponse.isPresent()){
             return ResponseEntity.notFound().build();
         }
@@ -72,11 +61,18 @@ public class WeaponController {
     public ResponseEntity<Void> delete(@PathVariable("id") Long id){
         LOGGER.info("Iniciando a remocao da arma");
         if(weaponService.delete(id)){
-            return  ResponseEntity.ok().build();
+            return ResponseEntity.ok().build();
         }
         return ResponseEntity.badRequest().build();
-
     }
+
+
+
+
+
+
+
+
 
 
 }

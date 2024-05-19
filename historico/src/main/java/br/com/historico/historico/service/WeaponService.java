@@ -17,7 +17,6 @@ public interface WeaponService {
 
     Optional<WeaponResponse> get(Long id);
 
-    Optional<WeaponResponse> getByPatrimonio(String patrimonio);
-
     boolean delete(Long id);
+
 }

@@ -1,9 +1,9 @@
 package br.com.historico.historico.persistence.entity;
 
-import java.util.function.Function;
 
 import jakarta.persistence.*;
 
+import java.util.function.Function;
 
 @Entity
 @Table(name = "tb_weapon")
@@ -53,8 +53,7 @@ public class Weapon {
     @Column(name = "acabamento", nullable = false)
     private String acabamento;
 
-
-    public <W> W map(Function<Weapon, W> func){
+    public <R> R map(Function<Weapon, R> func){
         return func.apply(this);
     }
 

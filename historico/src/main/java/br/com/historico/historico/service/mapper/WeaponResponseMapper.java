@@ -6,7 +6,7 @@ import br.com.historico.historico.persistence.entity.Weapon;
 public class WeaponResponseMapper implements Mapper<Weapon, WeaponResponse> {
     @Override
     public WeaponResponse map(Weapon input) {
-        if (input == null) {
+        if(input == null){
             return null;
         }
 

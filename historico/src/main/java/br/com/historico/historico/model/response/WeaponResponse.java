@@ -1,5 +1,7 @@
 package br.com.historico.historico.model.response;
 
+
+
 public class WeaponResponse {
 
     private Long id;
@@ -29,7 +31,6 @@ public class WeaponResponse {
     private String raias;
 
     private String acabamento;
-
 
     public Long getId() {
         return id;

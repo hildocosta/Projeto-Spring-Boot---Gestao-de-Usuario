@@ -3,9 +3,7 @@ package br.com.historico.historico.service.mapper;
 import br.com.historico.historico.model.request.WeaponRequest;
 import br.com.historico.historico.persistence.entity.Weapon;
 
-public class WeaponRequestMapper implements Mapper<WeaponRequest, Weapon> {
-
-
+public class WeaponRequestMapper implements Mapper<WeaponRequest, Weapon>{
     @Override
     public Weapon map(WeaponRequest input) {
         if(input == null){
@@ -29,11 +27,6 @@ public class WeaponRequestMapper implements Mapper<WeaponRequest, Weapon> {
         weapon.setAcabamento(input.getAcabamento());
 
         return weapon;
-
-
-
-
-
 
 
     }
