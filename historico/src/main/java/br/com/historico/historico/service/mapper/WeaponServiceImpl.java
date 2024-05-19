@@ -2,10 +2,9 @@ package br.com.historico.historico.service.mapper;
 
 import br.com.historico.historico.model.request.WeaponRequest;
 import br.com.historico.historico.model.response.WeaponResponse;
-import br.com.historico.historico.persistence.entity.User;
 import br.com.historico.historico.persistence.entity.Weapon;
 import br.com.historico.historico.persistence.repository.WeaponRepository;
-import br.com.historico.historico.service.UserService;
+import br.com.historico.historico.service.WeaponService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +15,7 @@ import java.util.Optional;
 
 import static org.springframework.util.Assert.notNull;
 
-public class WeaponServiceImpl implements WeaponService{
+public class WeaponServiceImpl implements WeaponService {
 
 
     private  static final Logger LOGGER = LoggerFactory.getLogger(WeaponService.class);
